@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Memory Game</title>
-    <script src="https://kit.fontawesome.com/932a800d03.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:500|Sail&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles/style.css"> 
-</head>
-<body>
-    <header>
-        <div class="wrapper">
-            <h1>Welcome to the memory game!</h1>
-            <div class="instructions">
-                <p>Click on any two cards to see if they match.</p> 
-                <p>If they do, they'll be removed from the game.</p>  
-                <p>When there are no cards left, you've won the game!</p>
-            </div>
-            <form action="">
-                <fieldset>
-                    <label for="userNumberOfCards">Please select the number of cards to play with</label>
-                    <select name="userNumberOfCards">
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="14" selected>14</option>
-                      </select>
-                    </fieldset>
-                    <button class="start">Press here to start</button>
-            </form>
-
-        </div>
-    </header>
-    <main>
-        <section class="gallery">
-            <div class="wrapper">
-                <p class="warning transparent">Please select a different card.</p>
-                <ul>
-                    <!-- images get appended here -->
-                </ul>
-            </div>     
-        </section>
-    </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/script.js"></script>
-
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Memory Game</title>
+		<script src="https://kit.fontawesome.com/932a800d03.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:500|Sail&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles/style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="wrapperr">
+				<h1>Welcome to the memory game!</h1>
+				<div class="instructions">
+					<p>Click on any two cards to see if they match.</p>
+					<p>If they do, they'll be removed from the game.</p>
+					<p>When there are no cards left, you've won the game!</p>
+				</div>
+				<form action="">
+					<fieldset>
+						<label for="userNumberOfCards"
+							>Please select the number of cards to play with</label
+						>
+						<select name="userNumberOfCards">
+							<option value="4">4</option>
+							<option value="6">6</option>
+							<option value="8">8</option>
+							<option value="10">10</option>
+							<option value="12">12</option>
+							<option value="14" selected>14</option>
+						</select>
+					</fieldset>
+					<button class="start">Press here to start</button>
+				</form>
+			</div>
+		</header>
+		<main>
+			<section class="gallery">
+				<div class="wrapper">
+					<p class="warning transparent">Please select a different card.</p>
+					<ul>
+						<!-- images get appended here -->
+					</ul>
+				</div>
+			</section>
+		</main>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
 </html>
