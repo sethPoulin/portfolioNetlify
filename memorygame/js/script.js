@@ -18,7 +18,7 @@ $(document).ready(function(){
     ];
 
 
-    const imageOrderNew = [];
+    const imageOrder = [];
     let cardsInPlay = 0;
     const cardsInGame = [];
 
