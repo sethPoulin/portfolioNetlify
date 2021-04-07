@@ -2,6 +2,10 @@
 @import "partials/variables.scss";
 @import "partials/mixins.scss";
 
+:root {
+    --base-font: 1
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -34,29 +38,64 @@ body {
 }
 
 h1 {
-    @extend %h1;
+    font-family: $roboto;
+    font-size: calc(5.8rem * var(--base-font));
+    font-weight: 700;
     color: white;
+    letter-spacing: calc(0.8rem * var(--base-font));
+    text-transform: uppercase;
+    line-height: calc(6.5rem * var(--base-font));
 }
 
 h2 {
-    @extend %h2;
+    font-size: calc(2.7rem * var(--base-font));
+    font-weight: 100;
+    letter-spacing: calc(1.5rem * var(--base-font));
+    font-family: $roboto;
+    text-transform: uppercase;
+    line-height: calc(3.8rem * var(--base-font));
+    color: white;
 }
 
 h3 {
-    @extend %h3;
-    color: black;
+    font-size: calc(3.5rem * var(--base-font));
+    letter-spacing: calc(0.3rem * var(--base-font));
+    font-family: $raleway;
+    color: white;
+    font-weight: 700;
+    line-height: calc(6.5rem * var(--base-font));
+
 }
 
 h4 {
-    @extend %h4;
+    font-size: calc(3.4rem * var(--base-font));
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: calc(3.4rem * var(--base-font));
+    font-family: $raleway;
+    letter-spacing: calc(0.3rem * var(--base-font));
 }
 
 h5 {
-    @extend %h5;
+    color: white;
+    font-family:$roboto;
+    font-size: calc(1.8rem * var(--base-font));
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: calc(3rem * var(--base-font));
+    letter-spacing: calc(0.3rem * var(--base-font));
 }
 
 a {
-    @extend %a;
+    font-family: $raleway;
+    font-size: calc(1.6rem * var(--base-font));
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: calc(0.2rem * var(--base-font));
+    transition: 0.2s;
+    text-transform: uppercase;
+    color: white;
 }
 
 a.button, button {
@@ -64,15 +103,17 @@ a.button, button {
     color: white;
     outline: none;
     display: inline-block;
-    padding: 13px 28px;
+    padding: 1em 2.8em;
     background-color: transparent;
     max-width: 240px;
     margin: 0 auto;
     margin-top: 20px;
     border: 2px solid white;
+    border-radius: 40px;
     &:hover {
         background-color: $green;
-        color: white;
+        font-weight: 400;
+        color: rgb(32, 59, 71);
         border: 2px solid $green;
     }
 
@@ -85,7 +126,12 @@ a.button, button {
 }
 
 p, label, button {
-    @extend %p;
+    font-weight:300;
+    font-size: calc(1.7rem * var(--base-font));
+    letter-spacing: calc(0.2rem * var(--base-font));
+    line-height: calc(3rem * var(--base-font));
+    font-family: $roboto;
+    color: white;
 }
 
 li {
@@ -94,6 +140,35 @@ li {
 
 .wrapper {
     @extend %wrapper;
+}
+
+@keyframes slide-down {
+    0% {
+        top: -75px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -75px;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        top: 0;
+        opacity: 100%;
+    }
+    100% {
+        top: 0;
+        opacity: 0;
+    }
 }
 
 // ================header styles======================
@@ -116,27 +191,34 @@ header {
     }
 
     .navBar {
+        position: fixed;
+        width: 100%;
+        padding-top: 20px;
+        z-index: 100;
+        transition: 0.3s;
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 20px;
 
-        &.show {
+        &.nav-slide-down {
             position: fixed;
-            top: 0;
+            background-color: rgba(44, 83, 100, 0.98);
+            animation: slide-down 0.8s forwards;
+            border-bottom: 1px solid rgb(179, 176, 176);
         }
 
-        @media(max-width: 480px){
+        &.nav-fade-out {
+            position: fixed;
+            background-color: rgba(44, 83, 100, 0.98);
+            animation: fade-out 0.5s forwards
+        }
+
+        .navBar-inner {
             width: 90%;
-        }
-
-        @media(max-width:330px){
-            left: -35px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
         }
     }
 
@@ -191,7 +273,7 @@ header {
         }
 
         @media(max-width:364px){
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         &::after{
@@ -221,11 +303,12 @@ header {
 
         @media(max-width:681px){
             max-width:250px;
-            margin: 0 auto;
+            margin: 140px auto 0;
             text-align: center;
         }
 
         @media(max-width:440px){
+            margin-top: 80px;
             font-size:4.5rem;
             line-height: 5rem;
         }
@@ -233,7 +316,7 @@ header {
 
     h2 {
         margin: 0 auto;
-        margin-bottom: 45px;
+        margin-bottom: 75px;
         position: relative;
         text-align: center;
 
@@ -274,11 +357,20 @@ header {
         right: 0;
     }
 
-    // Hi! I'm Seth. I like...
+    // I build scalable, performant websites...
     p {
         margin-bottom: 30px;
-        max-width: 510px;
+        max-width: 520px;
         margin: 0 auto;
+        text-align: left;
+
+        &:first-of-type {
+            margin-bottom: 2rem;
+        }
+
+        @media(max-width: 364px) {
+            font-size: 1.2rem;
+        }
     }
 
     a.chevron {
@@ -411,6 +503,7 @@ header {
 .work {
 
     background: linear-gradient(180deg,#0c232b 0%, #3e6071 100%);
+    padding-bottom: 140px;
 
     h3 {
         padding-top: 140px;
@@ -445,10 +538,10 @@ header {
         width: 80%;
         margin: 0 auto;
         min-height: 500px;
-        padding: 0 0 100px 0;
+        padding: 100px 0;
         position: relative;
 
-        @media(max-width: 885px){
+        @media(max-width: 950px){
             display: block;
             padding: 60px 0 80px 0;
         }
@@ -471,7 +564,7 @@ header {
 
     // work titles e.g. What's For Dinner
     h4 {
-        padding-bottom: 15px;
+        margin-bottom: 25px;
         color: white;
 
         @media(max-width: 1145px){
@@ -483,7 +576,7 @@ header {
             padding-bottom: 0;
         }
 
-        @media(max-width: 885px){
+        @media(max-width: 950px){
             text-align: center;
         }
     }
@@ -491,8 +584,9 @@ header {
     h5 {
         color: $green;
         padding-top: 10px;
+        margin-bottom: 10px;
 
-        @media(max-width: 885px){
+        @media(max-width: 950px){
             text-align: center;
         }
     }
@@ -500,8 +594,9 @@ header {
     p {
         color: white;
         letter-spacing: 0.1rem;
+        margin-bottom: 10px;
 
-        @media(max-width: 885px){
+        @media(max-width: 950px){
             text-align: center;
         }
 
@@ -523,25 +618,20 @@ header {
         justify-content: center;
         align-items: center;
 
-        @media(max-width: 885px){
+        @media(max-width: 950px){
             width: 100%;
         }
     }
 
     .copy {
         width: 50%;
-        min-height: 440px;
-        padding: 40px;
-        padding-top: 80px;
-        padding-bottom: 0px;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-        @media(max-width: 885px){
+        @media(max-width: 950px){
             width: 100%;
-            padding: 0;
             min-height: unset;
         }
     }
@@ -549,11 +639,19 @@ header {
     img {
         max-width: 100%;
         object-fit: cover;
+        margin-bottom: 35px;
+
+        &.work-ear-training-tutor {
+            margin-bottom: 10px;
+        }
     }
 
-    .code-names img,
-    .whats-my-ip img {
+    .code-names img {
         max-width: 65%;
+    }
+
+    .whats-my-ip img {
+        max-width: 70%;
     }
 
     .button {
@@ -572,7 +670,7 @@ header {
             padding-top: 60px;
         
 
-            @media(max-width: 885px) {
+            @media(max-width: 950px) {
                 padding-top: 0
             }
         }
@@ -584,7 +682,7 @@ header {
 }
 
 .skillsAndButtons {
-    @media(max-width: 885px){
+    @media(max-width: 950px){
         margin: 0 auto;
     }
 
@@ -598,20 +696,62 @@ header {
 .skills {
     background-color: $veryDarkBlue;
     text-align: center;
-    padding: 80px;
-    padding-bottom: 140px;
+    padding: 140px 80px;
 
     @media(max-width:449px) {
         padding: 20px;
         padding-bottom: 140px;
     }
 
+    .wrapper.skills-list {
+        display: flex;
+        flex-wrap: no-wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 14rem;
+        white-space: nowrap;
+        
+        div {
+            width: 100%;
+            text-align: left;
+        }
+
+        div + div {
+            margin-left: 30px;
+        }
+
+        @media(max-width: 1100px) {
+            display: block;
+            // max-width: 150px;
+            margin: 0 auto 5rem;
+            text-align: center;
+
+            div + div {
+                margin-left: 0;
+            }
+
+            div {
+                text-align: center;
+            }
+        }
+    }
+
+    h4 {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .web-icons {
+        margin-bottom: -7rem
+    }
 
     .top-icons,
     .bottom-icons {
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
         // justify-content: space-between;
         // display: flex;
         // flex-wrap: wrap;
