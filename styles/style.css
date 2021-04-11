@@ -386,7 +386,6 @@ a.button, button {
   display: inline-block;
   padding: 1em 2.8em;
   background-color: transparent;
-  max-width: 240px;
   margin: 0 auto;
   margin-top: 20px;
   border: 2px solid white;
@@ -718,9 +717,9 @@ header a.logo {
 
 header p {
   margin-bottom: 30px;
-  max-width: 520px;
+  max-width: 560px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 header p:first-of-type {
@@ -779,6 +778,10 @@ header svg.chevron {
 .about p {
   color: white;
   line-height: 2.8rem;
+  margin-bottom: 1em;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .about h3 {
@@ -814,7 +817,7 @@ header svg.chevron {
 }
 
 .about .aboutCopy {
-  width: 60%;
+  max-width: 650px;
   position: relative;
 }
 
@@ -878,18 +881,12 @@ header svg.chevron {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-}
-
-.about .copyAndButton p:first-child {
-  padding-bottom: 10px;
 }
 
 .about .button {
-  margin: unset;
-  margin-top: 30px;
+  margin-top: 5em;
+  margin-bottom: 1.5em;
+  text-align: center;
 }
 
 .work {
