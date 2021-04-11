@@ -383,6 +383,10 @@ header {
         &:hover svg.chevron {
             fill: $green;
         }
+
+        @media(max-width: 566px) {
+            display: none;
+        }
     }
 
     svg.chevron {

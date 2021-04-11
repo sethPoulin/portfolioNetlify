@@ -746,6 +746,12 @@ header a.chevron:hover svg.chevron {
   fill: #a1b541;
 }
 
+@media (max-width: 566px) {
+  header a.chevron {
+    display: none;
+  }
+}
+
 header svg.chevron {
   width: 50px;
   fill: rgba(255, 255, 255, 0.3);
