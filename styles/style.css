@@ -718,9 +718,11 @@ header h2::after {
 
 header svg.logo {
   width: 50px;
-  fill: none;
+  fill: white;
   stroke: white;
-  stroke-width: 10px;
+  stroke-width: 0px;
+  -webkit-transform: rotateZ(90deg) scale(0.6) translateX(-10px) translateY(12px);
+          transform: rotateZ(90deg) scale(0.6) translateX(-10px) translateY(12px);
 }
 
 header a.logo {
@@ -1234,7 +1236,7 @@ header svg.chevron {
 
 .skills .top-icons,
 .skills .bottom-icons {
-  max-width: 960px;
+  max-width: 80%;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
