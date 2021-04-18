@@ -1234,6 +1234,7 @@ header svg.chevron {
 
 .skills .top-icons,
 .skills .bottom-icons {
+  max-width: 960px;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;

@@ -790,6 +790,7 @@ header {
 
     .top-icons,
     .bottom-icons {
+        max-width: 960px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
