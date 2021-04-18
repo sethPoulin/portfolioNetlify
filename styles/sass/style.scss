@@ -6,6 +6,24 @@
     --base-font: 1
 }
 
+@media(max-width: 580px) {
+    :root {
+        --base-font: 0.95
+    }
+}
+
+@media(max-width: 460px) {
+    :root {
+        --base-font: 0.9
+    }
+}
+
+@media(max-width: 380px) {
+    :root {
+        --base-font: 0.85
+    }
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -72,7 +90,7 @@ h4 {
     color: white;
     text-transform: uppercase;
     font-weight: 400;
-    line-height: calc(3.4rem * var(--base-font));
+    line-height: calc(4.4rem * var(--base-font));
     font-family: $raleway;
     letter-spacing: calc(0.3rem * var(--base-font));
 }
@@ -105,7 +123,6 @@ a.button, button {
     display: inline-block;
     padding: 1em 2.8em;
     background-color: transparent;
-    // max-width: 240px;
     margin: 0 auto;
     margin-top: 20px;
     border: 2px solid white;
@@ -183,6 +200,12 @@ header {
     width: 100%;
     position: relative;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding-bottom: 0;
+
+    @media(max-width: 680px) {
+        height: auto;
+        padding-bottom: 100px;
+    }
     
     .wrapper {
         @media(max-width: 480px) {
@@ -268,12 +291,9 @@ header {
             padding: 10px;
         }
 
-        @media(max-width:380px){
-            font-size: 1.5rem;
-        }
-
-        @media(max-width:364px){
-            font-size: 1.2rem;
+        @media(max-width:350px){
+            padding: 0;
+            padding-bottom: 10px;
         }
 
         &::after{
@@ -306,12 +326,6 @@ header {
             margin: 140px auto 0;
             text-align: center;
         }
-
-        @media(max-width:440px){
-            margin-top: 80px;
-            font-size:4.5rem;
-            line-height: 5rem;
-        }
     }
 
     h2 {
@@ -325,14 +339,13 @@ header {
         }
 
         @media(max-width:440px){
-            font-size: 2.2rem;
             letter-spacing: .5rem;
         }
 
         &::after {
             content: '';
             position: absolute;
-            bottom: -25px;
+            bottom: -38px;
             left: 0;
             right: 0;
             width: 40%;
@@ -360,16 +373,17 @@ header {
     // Hi!  I'm Seth...
     p {
         margin-bottom: 30px;
-        max-width: 440px;
+        max-width: 650px;
         margin: 0 auto;
+        margin-bottom: 2rem;
         text-align: center;
 
-        &:first-of-type {
-            margin-bottom: 2rem;
+        @media(max-width: 730px) {
+            max-width: 440px;
         }
 
-        @media(max-width: 364px) {
-            font-size: 1.2rem;
+        @media(max-width: 480px) {
+            max-width: 360px;
         }
     }
 
@@ -503,6 +517,14 @@ header {
     background: linear-gradient(180deg,#0c232b 0%, #3e6071 100%);
     padding-bottom: 140px;
 
+    @media(max-width: 950px) {
+        padding-bottom: 100px;
+    }
+
+    @media(max-width: 760px) {
+        padding-bottom: 0;
+    }
+
     h3 {
         padding-top: 140px;
         text-align: center;
@@ -512,8 +534,11 @@ header {
 
         @media(max-width:500px){
             padding-top: 40px;
-            // padding-bottom: 40px;
             transform: translateX(-15px);
+
+            &:first-of-type {
+                padding-top: 80px;
+            }
         }
 
         &::after {
@@ -528,6 +553,12 @@ header {
             @media(max-width:500px){
                 width: 30px;
             }
+        }
+    }
+
+    a.button {
+        @media(max-width: 420px) {
+            display: block;
         }
     }
     
@@ -565,12 +596,7 @@ header {
         margin-bottom: 25px;
         color: white;
 
-        @media(max-width: 1145px){
-            font-size: 2.8rem;
-        }
-
         @media(max-width: 990px){
-            font-size: 2.4rem;
             padding-bottom: 0;
         }
 
@@ -696,9 +722,9 @@ header {
     text-align: center;
     padding: 140px 80px;
 
-    @media(max-width:449px) {
-        padding: 20px;
-        padding-bottom: 140px;
+    @media(max-width:450px) {
+        padding: 80px;
+        padding-bottom: 120px;
     }
 
     .wrapper.skills-list {
@@ -718,9 +744,12 @@ header {
             margin-left: 30px;
         }
 
-        @media(max-width: 1100px) {
+        span.lg-only {
+            display:inline;
+        }
+
+        @media(max-width: 1130px) {
             display: block;
-            // max-width: 150px;
             margin: 0 auto 5rem;
             text-align: center;
 
@@ -730,15 +759,29 @@ header {
 
             div {
                 text-align: center;
+                margin-bottom: 50px;
+
+                &:last-of-type {
+                    margin-bottom: 100px;
+                }
+            }
+        }
+        @media(max-width: 1180px) {
+            span.lg-only {
+                display: none;
             }
         }
     }
 
     h4 {
         color: white;
-        font-size: 2rem;
         font-weight: bold;
         margin-bottom: 15px;
+        font-size: calc(2.4rem * var(--base-font));
+
+        @media(max-width: 1100px) {
+            font-size: calc(2.2rem * var(--base-font));
+        }
     }
 
     .web-icons {
@@ -750,20 +793,11 @@ header {
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-        // justify-content: space-between;
-        // display: flex;
-        // flex-wrap: wrap;
 
         svg {
-            // max-width: 80px;
             margin: 20px;
         }
     }
-
-    // .web-icons {
-    //     // justify-content: space-between;
-    //     max-width: 70%;
-    // }
 
     h3 {
         position: relative;
@@ -778,7 +812,7 @@ header {
         }
 
         @media(max-width:400px){ 
-            transform: translateX(0px);
+            transform: translateX(-15px);
         }
         
 
@@ -792,13 +826,13 @@ header {
             margin-left: 5px;
 
             @media(max-width:400px){ 
-                width: 0;
+                width: 30px;
             }
         }
     }
 
     .fab, .devicon {
-        font-size: 6rem;
+        font-size: calc(6rem * var(--base-font));
         padding: 15px;
         color: white;
         margin-bottom: 20px;
@@ -811,7 +845,7 @@ header {
     }
 
     .devicon-trello-plain {
-        font-size: 5rem;
+        font-size: calc(5rem * var(--base-font));
     }
     
 }
@@ -874,7 +908,6 @@ header {
     }
 
     label {
-        // width: auto;
         position: absolute;
         padding-bottom: 5px;
         bottom: 0;
@@ -1048,11 +1081,7 @@ footer {
     }
 
     i {
-        font-size:2.5rem;
+        font-size: calc(2.5rem * var(--base-font));
         transition: 0.2s;
-    }
-
-    p {
-        font-size: 1.4rem;
     }
 }
