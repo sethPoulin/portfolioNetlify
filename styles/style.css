@@ -221,7 +221,7 @@ textarea {
   overflow: hidden;
 }
 
-p, label, button, .work .headerAndDescription a, .contact .comment textarea, .contact input, h2, h5, h4, h3, a, .contact button, h1 {
+.work .headerAndDescription a, .contact .comment textarea, .contact input, .contact button {
   font-family: "Roboto", sans-serif;
   font-size: 5.8rem;
   font-weight: 700;
@@ -231,7 +231,7 @@ p, label, button, .work .headerAndDescription a, .contact .comment textarea, .co
   line-height: 6.5rem;
 }
 
-p, label, button, .work .headerAndDescription a, .contact .comment textarea, .contact input, h2 {
+.work .headerAndDescription a, .contact .comment textarea, .contact input {
   font-size: 2.7rem;
   font-weight: 100;
   letter-spacing: 1.5rem;
@@ -240,32 +240,7 @@ p, label, button, .work .headerAndDescription a, .contact .comment textarea, .co
   line-height: 3.8rem;
 }
 
-h5, h4, h3 {
-  font-size: 3.5rem;
-  text-transform: unset;
-  letter-spacing: .3rem;
-  font-family: "Raleway", sans-serif;
-}
-
-h5, h4 {
-  font-size: 3.4rem;
-  color: black;
-  text-transform: uppercase;
-  font-weight: 400;
-  line-height: 3.4rem;
-  margin-bottom: 20px;
-  margin-top: 15px;
-}
-
-h5 {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  line-height: 3rem;
-}
-
-a, .contact button {
+.contact button {
   font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
@@ -277,7 +252,7 @@ a, .contact button {
   line-height: unset;
 }
 
-p, label, button, .work .headerAndDescription a, .contact .comment textarea, .contact input {
+.work .headerAndDescription a, .contact .comment textarea, .contact input {
   font-weight: 300;
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
@@ -291,8 +266,35 @@ p, label, button, .work .headerAndDescription a, .contact .comment textarea, .co
   max-width: 1280px;
 }
 
+:root {
+  --base-font: 1
+;
+}
+
+@media (max-width: 580px) {
+  :root {
+    --base-font: 0.95
+    ;
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --base-font: 0.9
+    ;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --base-font: 0.85
+    ;
+  }
+}
+
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -338,11 +340,64 @@ body {
 }
 
 h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: calc(5.8rem * var(--base-font));
+  font-weight: 700;
+  color: white;
+  letter-spacing: calc(0.8rem * var(--base-font));
+  text-transform: uppercase;
+  line-height: calc(6.5rem * var(--base-font));
+}
+
+h2 {
+  font-size: calc(2.7rem * var(--base-font));
+  font-weight: 100;
+  letter-spacing: calc(1.5rem * var(--base-font));
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  line-height: calc(3.8rem * var(--base-font));
   color: white;
 }
 
 h3 {
-  color: black;
+  font-size: calc(3.5rem * var(--base-font));
+  letter-spacing: calc(0.3rem * var(--base-font));
+  font-family: "Raleway", sans-serif;
+  color: white;
+  font-weight: 700;
+  line-height: calc(6.5rem * var(--base-font));
+}
+
+h4 {
+  font-size: calc(3.4rem * var(--base-font));
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: calc(4.4rem * var(--base-font));
+  font-family: "Raleway", sans-serif;
+  letter-spacing: calc(0.3rem * var(--base-font));
+}
+
+h5 {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(1.8rem * var(--base-font));
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: calc(3rem * var(--base-font));
+  letter-spacing: calc(0.3rem * var(--base-font));
+}
+
+a {
+  font-family: "Raleway", sans-serif;
+  font-size: calc(1.6rem * var(--base-font));
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: calc(0.2rem * var(--base-font));
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-transform: uppercase;
+  color: white;
 }
 
 a.button, button {
@@ -350,17 +405,18 @@ a.button, button {
   color: white;
   outline: none;
   display: inline-block;
-  padding: 13px 28px;
+  padding: 1em 2.8em;
   background-color: transparent;
-  max-width: 240px;
   margin: 0 auto;
   margin-top: 20px;
   border: 2px solid white;
+  border-radius: 40px;
 }
 
 a.button:hover, button:hover {
   background-color: #a1b541;
-  color: white;
+  font-weight: 400;
+  color: #203b47;
   border: 2px solid #a1b541;
 }
 
@@ -373,8 +429,75 @@ a.button:hover, button:hover {
   }
 }
 
+p, label, button {
+  font-weight: 300;
+  font-size: calc(1.7rem * var(--base-font));
+  letter-spacing: calc(0.2rem * var(--base-font));
+  line-height: calc(3rem * var(--base-font));
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
 li {
   padding-bottom: 0;
+}
+
+@-webkit-keyframes slide-down {
+  0% {
+    top: -75px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    top: -75px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -75px;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -75px;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    top: 0;
+    opacity: 100%;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    top: 0;
+    opacity: 100%;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
 }
 
 header {
@@ -395,6 +518,14 @@ header {
   position: relative;
   background: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding-bottom: 0;
+}
+
+@media (max-width: 680px) {
+  header {
+    height: auto;
+    padding-bottom: 100px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -404,36 +535,42 @@ header {
 }
 
 header .navBar {
+  position: fixed;
+  width: 100%;
+  padding-top: 20px;
+  z-index: 100;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
+}
+
+header .navBar.nav-slide-down {
+  position: fixed;
+  background-color: rgba(44, 83, 100, 0.98);
+  -webkit-animation: slide-down 0.8s forwards;
+          animation: slide-down 0.8s forwards;
+  border-bottom: 1px solid #b3b0b0;
+}
+
+header .navBar.nav-fade-out {
+  position: fixed;
+  background-color: rgba(44, 83, 100, 0.98);
+  -webkit-animation: fade-out 0.5s forwards;
+          animation: fade-out 0.5s forwards;
+}
+
+header .navBar .navBar-inner {
+  width: 90%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 80%;
-  margin: 0 auto;
-  padding-top: 20px;
-}
-
-header .navBar.show {
-  position: fixed;
-  top: 0;
-}
-
-@media (max-width: 480px) {
-  header .navBar {
-    width: 90%;
-  }
-}
-
-@media (max-width: 330px) {
-  header .navBar {
-    left: -35px;
-  }
 }
 
 header nav {
@@ -507,15 +644,10 @@ header a:not(.chevron) {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   header a:not(.chevron) {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 364px) {
-  header a:not(.chevron) {
-    font-size: 1.4rem;
+    padding: 0;
+    padding-bottom: 10px;
   }
 }
 
@@ -548,21 +680,14 @@ header h1 {
 @media (max-width: 681px) {
   header h1 {
     max-width: 250px;
-    margin: 0 auto;
+    margin: 140px auto 0;
     text-align: center;
-  }
-}
-
-@media (max-width: 440px) {
-  header h1 {
-    font-size: 4.5rem;
-    line-height: 5rem;
   }
 }
 
 header h2 {
   margin: 0 auto;
-  margin-bottom: 45px;
+  margin-bottom: 75px;
   position: relative;
   text-align: center;
 }
@@ -575,7 +700,6 @@ header h2 {
 
 @media (max-width: 440px) {
   header h2 {
-    font-size: 2.2rem;
     letter-spacing: .5rem;
   }
 }
@@ -583,7 +707,7 @@ header h2 {
 header h2::after {
   content: '';
   position: absolute;
-  bottom: -25px;
+  bottom: -38px;
   left: 0;
   right: 0;
   width: 40%;
@@ -608,8 +732,22 @@ header a.logo {
 
 header p {
   margin-bottom: 30px;
-  max-width: 510px;
+  max-width: 650px;
   margin: 0 auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 730px) {
+  header p {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 480px) {
+  header p {
+    max-width: 360px;
+  }
 }
 
 header a.chevron {
@@ -623,6 +761,12 @@ header a.chevron {
 
 header a.chevron:hover svg.chevron {
   fill: #a1b541;
+}
+
+@media (max-width: 566px) {
+  header a.chevron {
+    display: none;
+  }
 }
 
 header svg.chevron {
@@ -643,31 +787,34 @@ header svg.chevron {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
 }
 
 .about p {
   color: white;
   line-height: 2.8rem;
+  margin-bottom: 1em;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .about h3 {
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   line-height: 26px;
   color: white;
+  text-align: center;
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
 }
 
-@media (max-width: 792px) {
+@media (max-width: 500px) {
   .about h3 {
-    text-align: center;
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
-  }
-}
-
-@media (max-width: 400px) {
-  .about h3 {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
   }
 }
 
@@ -681,14 +828,14 @@ header svg.chevron {
   margin-left: 5px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .about h3::after {
-    width: 0;
+    width: 30px;
   }
 }
 
 .about .aboutCopy {
-  width: 60%;
+  max-width: 650px;
   position: relative;
 }
 
@@ -752,27 +899,34 @@ header svg.chevron {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-}
-
-.about .copyAndButton p:first-child {
-  padding-bottom: 10px;
 }
 
 .about .button {
-  margin: unset;
-  margin-top: 30px;
+  margin-top: 5em;
+  margin-bottom: 1.5em;
+  text-align: center;
 }
 
 .work {
   background: -webkit-gradient(linear, left top, left bottom, from(#0c232b), to(#3e6071));
   background: linear-gradient(180deg, #0c232b 0%, #3e6071 100%);
+  padding-bottom: 140px;
+}
+
+@media (max-width: 950px) {
+  .work {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 760px) {
+  .work {
+    padding-bottom: 0;
+  }
 }
 
 .work h3 {
-  padding-top: 70px;
+  padding-top: 140px;
   text-align: center;
   color: white;
   position: relative;
@@ -780,10 +934,14 @@ header svg.chevron {
           transform: translateX(-50px);
 }
 
-@media (max-width: 885px) {
+@media (max-width: 500px) {
   .work h3 {
     padding-top: 40px;
-    padding-bottom: 40px;
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px);
+  }
+  .work h3:first-of-type {
+    padding-top: 80px;
   }
 }
 
@@ -797,9 +955,15 @@ header svg.chevron {
   margin-left: 5px;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 500px) {
   .work h3::after {
-    bottom: 60px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .work a.button {
+    display: block;
   }
 }
 
@@ -807,13 +971,14 @@ header svg.chevron {
   width: 80%;
   margin: 0 auto;
   min-height: 500px;
-  padding: 60px 0 100px 0;
+  padding: 100px 0;
   position: relative;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .work .wrapper {
     display: block;
+    padding: 60px 0 80px 0;
   }
 }
 
@@ -827,35 +992,22 @@ header svg.chevron {
   right: 20%;
 }
 
-@media (max-width: 885px) {
-  .work .wrapper {
-    padding: 60px 0;
-  }
-}
-
 .work .canIRecycle .wrapper {
   padding-top: 0px;
 }
 
 .work h4 {
-  padding-bottom: 15px;
+  margin-bottom: 25px;
   color: white;
-}
-
-@media (max-width: 1145px) {
-  .work h4 {
-    font-size: 2.8rem;
-  }
 }
 
 @media (max-width: 990px) {
   .work h4 {
-    font-size: 2.4rem;
     padding-bottom: 0;
   }
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .work h4 {
     text-align: center;
   }
@@ -864,9 +1016,10 @@ header svg.chevron {
 .work h5 {
   color: #a1b541;
   padding-top: 10px;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .work h5 {
     text-align: center;
   }
@@ -875,9 +1028,10 @@ header svg.chevron {
 .work p {
   color: white;
   letter-spacing: 0.1rem;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .work p {
     text-align: center;
   }
@@ -906,9 +1060,12 @@ header svg.chevron {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .work .imageContainer {
     width: 100%;
   }
@@ -916,10 +1073,6 @@ header svg.chevron {
 
 .work .copy {
   width: 50%;
-  min-height: 440px;
-  padding: 40px;
-  padding-top: 80px;
-  padding-bottom: 80px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -933,18 +1086,30 @@ header svg.chevron {
           justify-content: space-between;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .work .copy {
     width: 100%;
-    padding: 0;
     min-height: unset;
   }
 }
 
 .work img {
-  max-width: 130%;
+  max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 35px;
+}
+
+.work img.work-ear-training-tutor {
+  margin-bottom: 10px;
+}
+
+.work .code-names img {
+  max-width: 65%;
+}
+
+.work .whats-my-ip img {
+  max-width: 70%;
 }
 
 .work .button {
@@ -960,11 +1125,21 @@ header svg.chevron {
   padding-left: 0;
 }
 
+.work .copy.left.first {
+  padding-top: 60px;
+}
+
+@media (max-width: 950px) {
+  .work .copy.left.first {
+    padding-top: 0;
+  }
+}
+
 .work .copy.right {
   padding-right: 0;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 950px) {
   .skillsAndButtons {
     margin: 0 auto;
   }
@@ -979,32 +1154,96 @@ header svg.chevron {
 .skills {
   background-color: #040d10;
   text-align: center;
-  padding: 80px;
-  padding-bottom: 140px;
+  padding: 140px 80px;
 }
 
-@media (max-width: 449px) {
+@media (max-width: 450px) {
   .skills {
-    padding: 20px;
-    padding-bottom: 140px;
+    padding: 80px;
+    padding-bottom: 120px;
   }
+}
+
+.skills .wrapper.skills-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 14rem;
+  white-space: nowrap;
+}
+
+.skills .wrapper.skills-list div {
+  width: 100%;
+  text-align: left;
+}
+
+.skills .wrapper.skills-list div + div {
+  margin-left: 30px;
+}
+
+.skills .wrapper.skills-list span.lg-only {
+  display: inline;
+}
+
+@media (max-width: 1130px) {
+  .skills .wrapper.skills-list {
+    display: block;
+    margin: 0 auto 5rem;
+    text-align: center;
+  }
+  .skills .wrapper.skills-list div + div {
+    margin-left: 0;
+  }
+  .skills .wrapper.skills-list div {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .skills .wrapper.skills-list div:last-of-type {
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .skills .wrapper.skills-list span.lg-only {
+    display: none;
+  }
+}
+
+.skills h4 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: calc(2.4rem * var(--base-font));
+}
+
+@media (max-width: 1100px) {
+  .skills h4 {
+    font-size: calc(2.2rem * var(--base-font));
+  }
+}
+
+.skills .web-icons {
+  margin-bottom: -7rem;
 }
 
 .skills .top-icons,
 .skills .bottom-icons {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(60px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
 }
 
-.skills .web-icons {
-  max-width: 70%;
+.skills .top-icons svg,
+.skills .bottom-icons svg {
+  margin: 20px;
 }
 
 .skills h3 {
@@ -1026,8 +1265,8 @@ header svg.chevron {
 
 @media (max-width: 400px) {
   .skills h3 {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px);
   }
 }
 
@@ -1043,12 +1282,12 @@ header svg.chevron {
 
 @media (max-width: 400px) {
   .skills h3::after {
-    width: 0;
+    width: 30px;
   }
 }
 
 .skills .fab, .skills .devicon {
-  font-size: 6rem;
+  font-size: calc(6rem * var(--base-font));
   padding: 15px;
   color: white;
   margin-bottom: 20px;
@@ -1060,7 +1299,7 @@ header svg.chevron {
 }
 
 .skills .devicon-trello-plain {
-  font-size: 5rem;
+  font-size: calc(5rem * var(--base-font));
 }
 
 .contact {
@@ -1329,11 +1568,8 @@ footer li:hover i {
 }
 
 footer i {
-  font-size: 2.5rem;
+  font-size: calc(2.5rem * var(--base-font));
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-
-footer p {
-  font-size: 1.4rem;
-}
+/*# sourceMappingURL=style.css.map */
