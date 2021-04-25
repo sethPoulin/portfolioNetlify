@@ -127,7 +127,9 @@ a.button, button {
     margin-top: 20px;
     border: 2px solid white;
     border-radius: 40px;
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         background-color: $green;
         font-weight: 400;
         color: rgb(32, 59, 71);
@@ -311,7 +313,9 @@ header {
         }
 
         @media(min-width:711px) {
-            &:hover::after { 
+            &:hover::after,
+            &:focus::after,
+            &:active::after { 
                 opacity: 1;
             }
         }
@@ -374,7 +378,7 @@ header {
     // Hi!  I'm Seth...
     p {
         margin-bottom: 30px;
-        max-width: 650px;
+        max-width: 550px;
         margin: 0 auto;
         margin-bottom: 2rem;
         text-align: center;
@@ -395,7 +399,9 @@ header {
         bottom: 20px;
         width: 100px;
 
-        &:hover svg.chevron {
+        &:hover svg.chevron,
+        &:focus svg.chevron,
+        &:active svg.chevron {
             fill: $green;
         }
 
@@ -607,9 +613,13 @@ header {
     }
 
     h5 {
-        color: $green;
+        color: $lighter-green;
         padding-top: 10px;
         margin-bottom: 10px;
+
+        &:last-of-type {
+            color: rgb(199, 227, 77);
+        }
 
         @media(max-width: 950px){
             text-align: center;
@@ -683,7 +693,9 @@ header {
         color: white;
         margin-right: 10px;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             border: 2px solid $green;
         }
     }
@@ -1016,7 +1028,9 @@ header {
             width: 100%;
         }
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             border: 2px solid $green;
         }
     }
@@ -1045,8 +1059,10 @@ header {
             text-align: center;
         }
 
-        &:hover {
-            color: $green;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $lighter-green;
         }
     }
 }
@@ -1077,7 +1093,9 @@ footer {
     li {
         padding: 15px 20px 10px 20px;
 
-        &:hover i {
+        &:hover i,
+        &:focus i,
+        &:active i {
             color: $green;
         }
     }
