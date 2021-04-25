@@ -413,7 +413,7 @@ a.button, button {
   border-radius: 40px;
 }
 
-a.button:hover, button:hover {
+a.button:hover, a.button:focus, a.button:active, button:hover, button:focus, button:active {
   background-color: #a1b541;
   font-weight: 400;
   color: #203b47;
@@ -668,7 +668,7 @@ header a:not(.chevron)::after {
 }
 
 @media (min-width: 711px) {
-  header a:not(.chevron):hover::after {
+  header a:not(.chevron):hover::after, header a:not(.chevron):focus::after, header a:not(.chevron):active::after {
     opacity: 1;
   }
 }
@@ -734,7 +734,7 @@ header a.logo {
 
 header p {
   margin-bottom: 30px;
-  max-width: 650px;
+  max-width: 550px;
   margin: 0 auto;
   margin-bottom: 2rem;
   text-align: center;
@@ -761,7 +761,9 @@ header a.chevron {
   width: 100px;
 }
 
-header a.chevron:hover svg.chevron {
+header a.chevron:hover svg.chevron,
+header a.chevron:focus svg.chevron,
+header a.chevron:active svg.chevron {
   fill: #a1b541;
 }
 
@@ -1016,9 +1018,13 @@ header svg.chevron {
 }
 
 .work h5 {
-  color: #a1b541;
+  color: #b1c553;
   padding-top: 10px;
   margin-bottom: 10px;
+}
+
+.work h5:last-of-type {
+  color: #c7e34d;
 }
 
 @media (max-width: 950px) {
@@ -1119,7 +1125,7 @@ header svg.chevron {
   margin-right: 10px;
 }
 
-.work .button:hover {
+.work .button:hover, .work .button:focus, .work .button:active {
   border: 2px solid #a1b541;
 }
 
@@ -1488,7 +1494,7 @@ header svg.chevron {
   }
 }
 
-.contact button:hover {
+.contact button:hover, .contact button:focus, .contact button:active {
   border: 2px solid #a1b541;
 }
 
@@ -1524,8 +1530,8 @@ header svg.chevron {
   }
 }
 
-.contact .emailContact:hover {
-  color: #a1b541;
+.contact .emailContact:hover, .contact .emailContact:focus, .contact .emailContact:active {
+  color: #b1c553;
 }
 
 footer {
@@ -1566,7 +1572,9 @@ footer li {
   padding: 15px 20px 10px 20px;
 }
 
-footer li:hover i {
+footer li:hover i,
+footer li:focus i,
+footer li:active i {
   color: #a1b541;
 }
 
