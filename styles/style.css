@@ -501,21 +501,7 @@ li {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  height: 100vh;
-  min-height: 680px;
   width: 100%;
-  position: relative;
   background: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   padding-bottom: 0;
@@ -528,10 +514,22 @@ header {
   }
 }
 
-@media (max-width: 480px) {
-  header .wrapper {
-    width: 90%;
-  }
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 header .navBar {
@@ -680,7 +678,6 @@ header h1 {
 @media (max-width: 681px) {
   header h1 {
     max-width: 250px;
-    margin: 140px auto 0;
     text-align: center;
   }
 }
@@ -740,18 +737,6 @@ header p {
   text-align: center;
 }
 
-@media (max-width: 730px) {
-  header p {
-    max-width: 440px;
-  }
-}
-
-@media (max-width: 480px) {
-  header p {
-    max-width: 360px;
-  }
-}
-
 header a.chevron {
   position: absolute;
   left: 50%;
@@ -767,12 +752,6 @@ header a.chevron:active svg.chevron {
   fill: #a1b541;
 }
 
-@media (max-width: 566px) {
-  header a.chevron {
-    display: none;
-  }
-}
-
 header svg.chevron {
   width: 50px;
   fill: rgba(255, 255, 255, 0.3);
@@ -784,7 +763,6 @@ header svg.chevron {
 .about {
   background: -webkit-gradient(linear, left top, left bottom, from(#2f5768), to(#1f3b45));
   background: linear-gradient(to bottom, #2f5768, #1f3b45);
-  padding: 100px 0;
 }
 
 .about .wrapper {
@@ -794,7 +772,11 @@ header svg.chevron {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .about p {
@@ -1253,6 +1235,13 @@ header svg.chevron {
 .skills .top-icons svg,
 .skills .bottom-icons svg {
   margin: 20px;
+}
+
+@media (max-width: 346px) {
+  .skills .top-icons,
+  .skills .bottom-icons {
+    display: none;
+  }
 }
 
 .skills h3 {

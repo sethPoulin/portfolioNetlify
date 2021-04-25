@@ -193,14 +193,7 @@ li {
 // ================header styles======================
 
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-    min-height: 680px;
     width: 100%;
-    position: relative;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     padding-bottom: 0;
 
@@ -210,9 +203,12 @@ header {
     }
     
     .wrapper {
-        @media(max-width: 480px) {
-            width: 90%;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
     }
 
     .navBar {
@@ -327,7 +323,6 @@ header {
 
         @media(max-width:681px){
             max-width:250px;
-            margin: 140px auto 0;
             text-align: center;
         }
     }
@@ -382,14 +377,6 @@ header {
         margin: 0 auto;
         margin-bottom: 2rem;
         text-align: center;
-
-        @media(max-width: 730px) {
-            max-width: 440px;
-        }
-
-        @media(max-width: 480px) {
-            max-width: 360px;
-        }
     }
 
     a.chevron {
@@ -404,10 +391,6 @@ header {
         &:active svg.chevron {
             fill: $green;
         }
-
-        @media(max-width: 566px) {
-            display: none;
-        }
     }
 
     svg.chevron {
@@ -421,12 +404,13 @@ header {
 
 .about {
     background: linear-gradient(to bottom, #2f5768, #1f3b45);
-    padding: 100px 0;
 
     .wrapper {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 0 auto;
+        min-height: 100vh;
     }
 
     p {
@@ -810,6 +794,10 @@ header {
 
         svg {
             margin: 20px;
+        }
+
+        @media(max-width: 346px) {
+            display: none;
         }
     }
 
